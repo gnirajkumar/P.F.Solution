@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Composite Death Claim form for EPFO</title>
+    <style>
+        @media print {
+        /* Set the size of the printed page */
+        @page {
+            size: A4;
+            margin: 0; /* Optional: to remove margins */
+        }
+       
+            body {
+            margin: 0; /* Remove body margins */
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+        }
+            .border-table {
+                width: 100%;
+                page-break-inside: auto;
+                margin: 0; Remove margin for printing
+            }
+            table {
+                width: 100%;
+                font-size: 2%; /* Smaller font size for printing */
+            }
+        }
+
+        
+
+        table {
+            width: 98%;
+            border-collapse: collapse;
+            position: relative; /* Needed for absolute positioning */
+        }
+        th, td {
+            border: 1px solid black;
+            text-align:left;
+            
+        }
+        caption {
+            caption-side: top;
+            font-weight: bold;
+            margin-bottom: 10px;
+            position: relative;
+        }
+        .mobile-number-container {
+            position: absolute;
+            right: 0;
+            top: 0;
+            display: flex;
+            align-items: center;
+            margin-top: 10px; /* Adjust for spacing */
+        }
+        .mobile-number-label {
+            margin-right: 5px;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+
+</head>
+<form id="myForm"
+<body>
+
+<div class="Heading-form">
+    <table>
+        <caption style="font-size: small;">
+            कर्मचारी भविष्य निधि संगठन <br>
+            EMPLOYEES PROVIDENT FUND ORGANISATION <br>
+            मृत्यु मामले में कंपोजिट दावा प्रपत्र <br>
+            Composite Claim Form in Death Case <br>
+            प्रपत्र -20 (भविष्य निधि भुगतान )/प्रपत्र 10 D (पेंशन )/प्रपत्र 5 आई एफ (ई.डी.एल.आई ) <br>
+            [Form-20(P.F Payment)/Form-10D(Pension)/Form-5IF(EDLI)]
+            <div class="mobile-number-container">
+                <label class="mobile-number-label">Mobile No.</label>
+                <input type="text" placeholder="Mobile Number" style="width: 100px;">
+            </div>
+        </caption>
+        <thead>
+            <tr>
+                <th style="width: 1%; font-size: small;">1.</th>
+                <th style="width: 25%; font-size: small;">Tick whichever is/are appliable</th>
+                <th style="width: 25%; font-size: small;">(1.)provident Fund <input type="checkbox" name="tick" id="tick"></th>
+                <th style="width: 25%;font-size: small;">(2.) Pension <input type="checkbox" name="tick" id="tick"></th>
+                <th style="width: 24%;font-size: small;">(3.) Insurance (EDLI) <input type="checkbox" name="tick" id="tick"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Example Rows with Manual Cell Sizes -->
+            <tr>
+                <td style="font-size: medium;">2</td>
+                <td colspan="2" style="font-size:small;">मृतक सदस्य का नाम<br/>
+                    Name of deceased member (in CAPITAL Letter)</td>
+                <td colspan="2"><input type="text" name="Name" id="Name"  
+                    placeholder="Enter your full name as in Aadhar" 
+                    style="width: 90%; border: none; padding: 5px;"></td>
+                
+            </tr>
+            <tr>
+                <td rowspan="2" style="font-size: medium;">3</td>
+                <td colspan="2" style="font-size:small;">a) मृतक के पिता का नाम / Fatder's Name of deceased member (in CAPITAL Letter)</td>
+                <!-- <td>4</td> -->
+                <td colspan="2"><input type="text" name="Name" id="Name"  
+                    placeholder="Enther Father Name of Member" 
+                    style="width: 90%; border: none; padding: 5px;"></td>
+                <!-- <td>4</td> -->
+            </tr>
+            <!-- Repeat for additional rows -->
+            <tr>
+                <td colspan="2" style="font-size:small;">b) मृतक के पति/पत्नी का नाम<br/>
+                    Spouse Name of deceased member (in CAPITAL Letter)</td>
+                <!-- <td>5</td> -->
+                <td colspan="2"><input type="text" name="Name" id="Name"  
+                    placeholder="Write Spouse Name of Member" 
+                    style="width: 90%; border: none; padding: 5px;"></td>
+                <!-- <td>5</td> -->
+            </tr>
+            <!-- Continue for a total of 25 rows -->
+            <tr>
+                <td style="font-size: medium;">4</td>
+                <td colspan="2" style="font-size:small;">मृतक सदस्य की वैवाहिक स्थिति / Marrital Status of deceased member</td>
+                <!-- <td>4</td> -->
+                <td colspan="2"><input type="text" name="Name" id="Name"  
+                    placeholder="Write the Marittal Status of Member" 
+                    style="width: 90%; border: none; padding: 5px;"></td>
+                <!-- <td>4</td> -->
+            </tr>
+            <tr>
+                <td rowspan="3" style="font-size: medium;">5</td>
+                <td colspan="2"style="font-size:small;">a) मृतक सदस्य का आधार संख्या (यदि उपलब्ध हो| <br/>
+                    Aadhar Number of deceased member  (If available)</td>
+                <!-- <td>6</td> -->
+                <td colspan="2"><input type="text" name="Name" id="Name"  
+                    placeholder="Write the Aadhar Number of Member" 
+                    style="width: 90%; border: none; padding: 5px;"></td>
+                <!-- <td>6</td> -->
+            </tr>
+            <tr>
+                <td colspan="2"style="font-size:small;">b) यु.ए.एन / Universal Account Number (UAN)</td>
+                <!-- <td>7</td> -->
+                <td colspan="2"> <input type="text" name="Name" id="Name"  
+                    placeholder="Write the UAN, if available" 
+                    style="width: 90%; border: none; padding: 5px;"></td>
+                <!-- <td>7</td> -->
+            </tr>
+            <tr>
+                <td colspan="2"style="font-size:small;">c) भविष्य निधि खाता संख्या (यदि यु.ए.एन उपलब्ध नहीं है|)<br/>
+                    P.F Account Number (In case UAN is not available)</td>
+                <!-- <td>7</td> -->
+                <td colspan="2"><input type="text" name="Name" id="Name"  
+                    placeholder="Write the P.F Account Number of Member" 
+                    style="width: 90%; border: none; padding: 5px;"></td>
+                <!-- <td>7</td> -->
+            </tr>
+            <tr>
+                <td style="font-size: medium;">6</td>
+                <td colspan="2"style="font-size:small;">सेवा छोड़ने की तिथि / Date of leaving of service 
+                    </td>
+                <!-- <td>7</td> -->
+                <td colspan="2"> <label for="start"></label>
+
+                    <input type="date" id="start" name="trip-start" value="2018-07-22" min="1975-01-01" max="2080-12-31" />
+                    <!-- <input type="text" name="Name" id="Name"  
+                    placeholder="Write the date of leaving of the estt" 
+                    style="width: 100%; border: none; padding: 5px;"></td> -->
+                <!-- <td>7</td> -->
+            </tr>
+            <tr>
+                <td rowspan="3" style="font-size: medium;">7</td>
+                <td colspan="2"style="font-size:small;">a) क्या स्कीम प्रमाणपत्र जारी किया गया है (हाँ या नहीं ) <br/>
+                    Whether Scheme Certificate has been issued ( Yes or No)
+                </td>
+            <!-- <td>7</td> -->
+            <td colspan="2"> <label for="Option"></label>
+                <select name="Option" id="Option">
+                  <option value="Yes">Yes</option>
+                  <option value="No">No</option>
+                  </select>
+                <br><br>
+                <!-- <input type="submit" value="Submit"> -->
+                <!-- <input type="text" name="Name" id="Name"  
+                placeholder="Wite in Yes or Not" 
+                style="width: 90%; border: none; padding: 5px;"></td> -->
+            <!-- <td>7</td> -->
+            </tr>
+            <tr>
+                <td colspan="2"style="font-size:small;">b) यदि हाँ तो स्कीम प्रमाण पत्र की संख्या दर्ज करें|<br/> 
+                    If Yes, Write the Number of Scheme Certificate
+                </td>
+            <!-- <td>7</td> -->
+            <td colspan="2"style="font-size:small;"><input type="text" name="Name" id="Name"  
+                placeholder="if the answer is Yes for above, write the scheme certificate number" 
+                style="width: 90%; border: none; padding: 5px;">
+            <!-- <td>7</td> -->
+            </tr>
+            <tr>
+                <td colspan="2"style="font-size:small;">c) स्कीम प्रमाण पत्र जारी करने वाले कार्यालय का नाम   <br/>
+                    Name the Scheme Certificate issueing Office
+                </td>
+            <!-- <td>7</td> -->
+            <td colspan="2"><input type="text" name="Name" id="Name"  
+                placeholder="write the name of office, from where the SC was issued" 
+                style="width: 90%; border: none; padding: 5px;"></td>
+            <!-- <td>7</td> -->
+            </tr>
+            <tr>
+                <td style="font-size: medium;">8</td>
+                <td colspan="2"style="font-size:small;">गैर अंशदायी सेवा की अवधी (वर्ष/माह/दिन) नियोक्ता द्वारा भरा जाएगा  <br/>
+                    Period of Non Contributory service (Year/Month/Days) will be filled by employer
+                </td>
+            <!-- <td>7</td> -->
+            <td colspan="2"><input type="text" name="Name" id="Name"  
+                placeholder="Write 'Nil', if there is no NCP. 
+                style="width: 90%; border: none; padding: 5px;"></td>
+            <!-- <td>7</td> -->
+            </tr>
+            <tr>
+                <td style="font-size: medium;">9</td>
+                <td colspan="2"style="font-size:small;">सदस्य की मृत्यु की तिथि  <br/>
+                    Date of Death of Member
+                </td>
+            <!-- <td>7</td> -->
+            <td colspan="2"> <label for="start"></label>
+
+                <input type="date" id="start" name="trip-start" value="2018-07-22" min="1975-01-01" max="2080-12-31" />
+                <!-- <input type=    "text" name="Name" id="Name"  
+                placeholder="Write the date of death of Member in DD/MM/YYYY" 
+                style="width: 100%; border: none; padding: 5px;"></td> -->
+            <!-- <td>7</td> -->
+            </tr>
+            <tr>
+                <td style="font-size: medium;">10</td>
+                <td colspan="2"style="font-size:small;">क्या, सदस्य की मृत्यु सेवा काल के दौरान हुई थी| (हाँ या नहीं ) <br/>
+                    Whetder the Member had died while in service (Yes or No)
+                </td>
+            <!-- <td>7</td> -->
+            <td colspan="2"><label for="Option"></label>
+                <select name="Option" id="Option">
+                  <option value="Yes">Yes</option>
+                  <option value="No">No</option>
+                  </select>
+                <!-- <br><br>
+                <input type="submit" value="Submit"> -->
+                <!-- <input type="text" name="Name" id="Name"  
+                placeholder="Give answer in only Yes or No" 
+                style="width: 90%; border: none; padding: 5px;"></td> -->
+            <!-- <td>7</td> -->
+            </tr>
+            <tr>
+                <td colspan="5" style="text-align: center; font-size:small;">भविष्य निधि, पेंशन तथा बिमा (ई.डी.एल.आई.)
+                    हेतु दावाकर्ता का विवरण<br> claimants details for provident fund, pension and insurance (EDLI)
+              Name of tde deceased member in CAPITAL Letter</td>
+            </tr>
+            <tr>
+                <td rowspan="6" style="font-size:medium;">11.</td>
+                <td colspan="4" rowspan="6" style="text-align: center;font-size:small;">दावाकर्ता अवस्क / नामित/क़ानूनी उतराधिकारी /वर्तमान परिवार के सदस्य का विवरण,
+                    जिनके द्वारा दावा प्रस्तुत किया गया है <br> 
+                    *Particular of the claimant /Minor/Nominee(s)/Legal Heir(s)/Surviving family member on whose behalf the claim is submitted
+                    <table>
+                        <tr>
+                            <th style="width: 2%;font-size:medium;">Sr.No.</th>
+                            <th style="width: 21%;font-size:medium;">Name</th>
+                            <th style="width: 21%;font-size:medium;">Father/Spouse Name</th>
+                            <th style="width: 20%;font-size:medium;">Aadhar No.</th>
+                            <th style="width: 4%;font-size:medium;">Gender</th>
+                            <th style="width: 14%;font-size:medium;">DOB</th>
+                            <th style="width: 9%;font-size:medium;">Marital Status</th>
+                            <th style="width: 9%;font-size:medium;">Relation with Member</th>
+                            <!-- <th style="width: 10%;font-size:medium;">Relation with Gurdian</th> -->
+                        </tr>
+                        <tr>
+                            <td style="font-size: medium;">(i)</td>
+                            <td><input type="text" name="Name" id="Name"  
+                                placeholder="Enter Name" 
+                                style="width: 90%; border: none; padding: 5px;"></td>
+                            <td><input type="text" name="Name" id="Name"  
+                                placeholder="Enter Father Name" 
+                                style="width: 90%; border: none; padding: 5px;"></td>
+                            <td><input type="text" name="Name" id="Name"  
+                                placeholder="Enter Aadhar No." 
+                                style="width: 80%; border: none; padding: 5px;"></td>
+                            <td><label for="Gemder"></label>
+                                <select name="Gender" id="Gemder">
+                                  <option value="Male">male</option>
+                                  <option value="Femal">Femal</option>
+                                  </select></td>
+                            <td><input type="text" name="Name" id="Name"  
+                                placeholder="DOB" 
+                                style="width: 75%; border: none; padding: 5px;"></td></td>
+                            <td><label for="Marital Status"></label>
+                                <select name="Marrital Status" id="Gemder">
+                                  <option value="Married">Married</option>
+                                  <option value="Un-Married">Un-Married</option>
+                                  </select></td>
+                            <td><label for="Relation with Member"></label>
+                                <select name="Relation with Member" id="Relation">
+                                  <option value="Husbank">Husband</option>
+                                  <option value="Wife">Wife</option>
+                                  <option value="Daughter">Daughter</option>
+                                  <option value="Son">Son</option>
+                                  <option value="Father">Father</option>
+                                  <option value="Mother">Mother</option>
+                                  </select></td>
+                            <!-- <td><label for="Relation with Member"></label>
+                                <select name="Relation with Member" id="Relation">
+                                  <option value="Grand Son">Grand Son</option>
+                                  <option value="Grand Daughter">Grand Daughter</option>
+                                 </select></td> -->
+                        </tr>
+                        <tr>
+                            <td style="font-size: medium;">(ii)</td>
+                            <td><input type="text" name="Name" id="Name"  
+                                placeholder="Enter Name" 
+                                style="width: 90%; border: none; padding: 5px;"></td>
+                            <td><input type="text" name="Name" id="Name"  
+                                placeholder="Enter Father Name" 
+                                style="width: 90%; border: none; padding: 5px;"></td>
+                            <td><input type="text" name="Name" id="Name"  
+                                placeholder="Enter Aadhar No." 
+                                style="width: 78%; border: none; padding: 5px;"></td>
+                            <td><label for="Gemder"></label>
+                                <select name="Gender" id="Gemder">
+                                  <option value="Male">male</option>
+                                  <option value="Femal">Femal</option>
+                                  </select></td>
+                            <td><input type="text" name="Name" id="Name"  
+                                placeholder="DOB" 
+                                style="width: 75%; border: none; padding: 5px;"></td>
+                            <td><label for="Gemder"></label>
+                                <select name="Marrital Status" id="Gemder">
+                                  <option value="Married">Married</option>
+                                  <option value="Un-Married">Un-Married</option>
+                                  </select></td>
+                            <td><label for="Relation with Member"></label>
+                                <select name="Relation with Member" id="Relation">
+                                  <option value="Husbank">Husband</option>
+                                  <option value="Wife">Wife</option>
+                                  <option value="Daughter">Daughter</option>
+                                  <option value="Son">Son</option>
+                                  <option value="Father">Father</option>
+                                  <option value="Mother">Mother</option>
+                                  </select></td>
+                            <!-- <td><label for="Relation with Member"></label>
+                                <select name="Relation with Member" id="Relation">
+                                  <option value="Grand Son">Grand Son</option>
+                                  <option value="Grand Daughter">Grand Daughter</option>
+                                 </select></td> -->
+                        </tr>
+                        <tr>
+                            <td style="font-size: medium;">(iii)</td>
+                            <td><input type="text" name="Name" id="Name"  
+                                placeholder="Enter Name" 
+                                style="width: 90%; border: none; padding: 5px;"></td>
+                            <td><input type="text" name="Name" id="Name"  
+                                placeholder="Enter Father Name" 
+                                style="width: 90%; border: none; padding: 5px;"></td>
+                            <td><input type="text" name="Name" id="Name"  
+                                placeholder="Enter Aadhar No." 
+                                style="width: 80%; border: none; padding: 5px;"></td>
+                            <td><label for="Gemder"></label>
+                                <select name="Gender" id="Gemder">
+                                  <option value="Male">male</option>
+                                  <option value="Femal">Femal</option>
+                                  </select></td>
+                            <td><input type="text" name="Name" id="Name"  
+                                placeholder="DOB" 
+                                style="width: 75%; border: none; padding: 5px;"></td></td>
+                            <td><label for="Gemder"></label>
+                                <select name="Marrital Status" id="Gemder">
+                                  <option value="Married">Married</option>
+                                  <option value="Un-Married">Un-Married</option>
+                                  </select></td>
+                            <td><label for="Relation with Member"></label>
+                                <select name="Relation with Member" id="Relation">
+                                  <option value="Husbank">Husband</option>
+                                  <option value="Wife">Wife</option>
+                                  <option value="Daughter">Daughter</option>
+                                  <option value="Son">Son</option>
+                                  <option value="Father">Father</option>
+                                  <option value="Mother">Mother</option>
+                                  </select></td>
+                            <!-- <td><label for="Relation with Member"></label>
+                                <select name="Relation with Member" id="Relation">
+                                  <option value="Grand Son">Grand Son</option>
+                                  <option value="Grand Daughter">Grand Daughter</option>
+                                 </select></td> -->
+                        </tr>
+                        <tr>
+                            <td style="font-size: medium;">(iv)</td>
+                            <td><input type="text" name="Name" id="Name"  
+                                placeholder="Enter Name" 
+                                style="width: 90%; border: none; padding: 5px;"></td>
+                            <td><input type="text" name="Name" id="Name"  
+                                placeholder="Enter Father Name" 
+                                style="width: 90%; border: none; padding: 5px;"></td>
+                            <td><input type="text" name="Name" id="Name"  
+                                placeholder="Enter Aadhar No." 
+                                style="width: 80%; border: none; padding: 5px;"></td>
+                            <td><label for="Gemder"></label>
+                                <select name="Gender" id="Gemder">
+                                  <option value="Male">male</option>
+                                  <option value="Femal">Femal</option>
+                                  </select></td>
+                            <td><input type="text" name="Name" id="Name"  
+                                placeholder="DOB" 
+                                style="width: 75%; border: none; padding: 5px;"></td></td>
+                            <td><label for="Gemder"></label>
+                                <select name="Marrital Status" id="Gemder">
+                                  <option value="Married">Married</option>
+                                  <option value="Un-Married">Un-Married</option>
+                                  </select></td>
+                            <td><label for="Relation with Member"></label>
+                                <select name="Relation with Member" id="Relation">
+                                  <option value="Husbank">Husband</option>
+                                  <option value="Wife">Wife</option>
+                                  <option value="Daughter">Daughter</option>
+                                  <option value="Son">Son</option>
+                                  <option value="Father">Father</option>
+                                  <option value="Mother">Mother</option>
+                                  </select></td>
+                            <!-- <td><label for="Relation with Member"></label>
+                                <select name="Relation with Member" id="Relation">
+                                  <option value="Grand Son">Grand Son</option>
+                                  <option value="Grand Daughter">Grand Daughter</option>
+                                 </select></td> -->
+                        </tr>
+                        <tr>
+                            <td style="font-size: medium;">(v)</td>
+                            <td><input type="text" name="Name" id="Name"  
+                                placeholder="Enter Name" 
+                                style="width: 90%; border: none; padding: 5px;"></td>
+                            <td><input type="text" name="Name" id="Name"  
+                                placeholder="Enter Father Name" 
+                                style="width: 90%; border: none; padding: 5px;"></td>
+                            <td><input type="text" name="Name" id="Name"  
+                                placeholder="Enter Aadhar No." 
+                                style="width: 80%; border: none; padding: 5px;"></td>
+                            <td><label for="Gemder"></label>
+                                <select name="Gender" id="Gemder">
+                                  <option value="Male">male</option>
+                                  <option value="Femal">Femal</option>
+                                  </select></td>
+                            <td><input type="text" name="Name" id="Name"  
+                                placeholder="DOB" 
+                                style="width: 75%; border: none; padding: 5px;"></td></td>
+                            <td><label for="Gemder"></label>
+                                <select name="Marrital Status" id="Gemder">
+                                  <option value="Married">Married</option>
+                                  <option value="Un-Married">Un-Married</option>
+                                  </select></td>
+                            <td><label for="Relation with Member"></label>
+                                <select name="Relation with Member" id="Relation">
+                                  <option value="Husbank">Husband</option>
+                                  <option value="Wife">Wife</option>
+                                  <option value="Daughter">Daughter</option>
+                                  <option value="Son">Son</option>
+                                  <option value="Father">Father</option>
+                                  <option value="Mother">Mother</option>
+                                  </select></td>
+                            <!-- <td><label for="Relation with Member"></label>
+                                <select name="Relation with Member" id="Relation">
+                                  <option value="Grand Son">Grand Son</option>
+                                  <option value="Grand Daughter">Grand Daughter</option>
+                                 </select></td> -->
+                        </tr>
+                    </table>
+                    <div class="info">
+                        * In case of more than five family members, 
+                        the details of family members may be furnished in a sprarate sheet,
+                    duly attested by the employers.
+                    </div>
+              
+            </tr>
+            <br>
+            <table>
+                <tr>
+                    <td style="width: 1%;" style="font-size: medium;">12.</td>
+                    <td style="width: 95%; text-align: center; font-size:small;">भविष्य निधि तथा ई.दी.एल.आई (बिमा) के भुगतान हेतु बैंक खाता के विवरण/
+                        Bank account details for payment of P.F and E.D.L.I amount
+                    <table>
+                        <tr>
+                            <th  width:20%; style="font-size: medium;">Bank Account details for payment</th>
+                            <th  width:20%; style="font-size: medium;">Claimant-I</th>
+                            <th  width:20%; style="font-size: medium;">Claimant-II</th>
+                            <th  width:20%; style="font-size: medium;">Claimant-iv</th>
+                        </tr>
+                        <tr>
+                            <td style="font-size: medium;">Name</td>
+                            <td><input type="text" name="Name" id="Name"  
+                                placeholder="Enter Name" 
+                                style="width: 90%; border: none; padding: 5px;"></td>
+                            <td><input type="text" name="Name" id="Name"  
+                                placeholder="Enter Name" 
+                                style="width: 90%; border: none; padding: 5px;"></td>
+                            <td><input type="text" name="Name" id="Name"  
+                                placeholder="Enter Name" 
+                                style="width: 90%; border: none; padding: 5px;"></td>
+                            
+                        </tr>
+                        <tr>
+                            <td style="font-size: medium;">Saving Bank Account No.</td>
+                            <td><input type="text" name="Name" id="Name"  
+                                placeholder="Enter Account No" 
+                                style="width: 90%; border: none; padding: 5px;"></td>
+                            <td><input type="text" name="Name" id="Name"  
+                                placeholder="Enter Account No" 
+                                style="width: 90%; border: none; padding: 5px;"></td>
+                            <td><input type="text" name="Name" id="Name"  
+                                placeholder="Enter Account No" 
+                                style="width: 90%; border: none; padding: 5px;"></td>
+                            
+                        </tr>
+                        <tr>
+                            <td style="font-size: medium;">Name and Address of the Bank</td>
+                            <td><input type="text" name="Name" id="Name"  
+                                placeholder="Enter Bank Name and add" 
+                                style="width: 90%; border: none; padding: 5px;"></td>
+                            <td><input type="text" name="Name" id="Name"  
+                                placeholder="Enter Bank Name and add" 
+                                style="width: 90%; border: none; padding: 5px;"></td>
+                            <td><input type="text" name="Name" id="Name"  
+                                placeholder="Enter Bank Name and add" 
+                                style="width: 90%; border: none; padding: 5px;"></td>
+                            
+                        </tr>
+                        <tr>
+                            <td style="font-size: medium;">IFS Code of Bank</td>
+                            <td><input type="text" name="Name" id="Name"  
+                                placeholder="Enter IFSC" 
+                                style="width: 90%; border: none; padding: 5px;"></td>
+                            <td><input type="text" name="Name" id="Name"  
+                                placeholder="Enter IFSC" 
+                                style="width: 90%; border: none; padding: 5px;"></td>
+                            <td><input type="text" name="Name" id="Name"  
+                                placeholder="Enter IFSC" 
+                                style="width: 90%; border: none; padding: 5px;"></td>
+                          
+                        </tr>
+                     </table>
+                     <tr>
+                        <td colspan="5" style="text-align: center; font-size:small;">भविष्य निधि, पेंशन तथा बिमा (ई.डी.एल.आई.)
+                            हेतु दावाकर्ता का विवरण<br> claimants details for provident fund, pension and insurance (EDLI)
+                      Name of tde deceased member in CAPITAL Letter</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="5" style="font-size: medium;">13.</td>
+                        <td rowspan="5">
+                        <table>
+                            <tr>
+                            <th  width:20%; style="font-size: medium;">Bank Account details for payment</th>
+                            <th  width:20%; style="font-size: medium;">Claimant-I</th>
+                            <th  width:20%; style="font-size: medium;">Claimant-II</th>
+                            <th  width:20%; style="font-size: medium;">Claimant-iv</th>
+                            <th  width:20%; style="font-size: medium;">Claimant-V</th>
+                            </tr>
+                            <tr>
+                                <td style="font-size: medium;">Name</td>
+                                <td><input type="text" name="Name" id="Name"  
+                                    placeholder="Enter Name" 
+                                    style="width: 90%; border: none; padding: 5px;"></td>
+                                <td><input type="text" name="Name" id="Name"  
+                                    placeholder="Enter Name" 
+                                    style="width: 90%; border: none; padding: 5px;"></td>
+                                <td><input type="text" name="Name" id="Name"  
+                                    placeholder="Enter Name" 
+                                    style="width: 90%; border: none; padding: 5px;"></td>
+                                <td><input type="text" name="Name" id="Name"  
+                                    placeholder="Enter Name" 
+                                    style="width: 90%; border: none; padding: 5px;"></td>
+                            </tr>
+                            <tr>
+                                <td style="font-size: medium;">Saving Bank Account No.</td>
+                                <td><input type="text" name="Name" id="Name"  
+                                    placeholder="Enter Account No" 
+                                    style="width: 90%; border: none; padding: 5px;"></td>
+                                <td><input type="text" name="Name" id="Name"  
+                                    placeholder="Enter Account No" 
+                                    style="width: 90%; border: none; padding: 5px;"></td>
+                                <td><input type="text" name="Name" id="Name"  
+                                    placeholder="Enter Account No" 
+                                    style="width: 90%; border: none; padding: 5px;"></td>
+                                <td><input type="text" name="Name" id="Name"  
+                                    placeholder="Enter Account No" 
+                                    style="width: 90%; border: none; padding: 5px;"></td>
+                            </tr>
+                            <tr>
+                                <td style="font-size: medium;">Name and Adress of the Bank</td>
+                                <td><input type="text" name="Name" id="Name"  
+                                    placeholder="Enter Bank Name and add" 
+                                    style="width: 90%; border: none; padding: 5px;"></td>
+                                <td><input type="text" name="Name" id="Name"  
+                                    placeholder="Enter Bank Name and add" 
+                                    style="width: 90%; border: none; padding: 5px;"></td>
+                                <td><input type="text" name="Name" id="Name"  
+                                    placeholder="Enter Bank Name and add" 
+                                    style="width: 90%; border: none; padding: 5px;"></td>
+                                <td><input type="text" name="Name" id="Name"  
+                                    placeholder="Enter Bank Name and add" 
+                                    style="width: 90%; border: none; padding: 5px;"></td>
+                            </tr>
+                            <tr>
+                                <td style="font-size: medium;">IFSC Code.</td>
+                                <td><input type="text" name="Name" id="Name"  
+                                    placeholder="Enter IFSC" 
+                                    style="width: 90%; border: none; padding: 5px;"></td>
+                                <td><input type="text" name="Name" id="Name"  
+                                    placeholder="Enter IFSC" 
+                                    style="width: 90%; border: none; padding: 5px;"></td>
+                                <td><input type="text" name="Name" id="Name"  
+                                    placeholder="Enter IFSC" 
+                                    style="width: 90%; border: none; padding: 5px;"></td>
+                                <td><input type="text" name="Name" id="Name"  
+                                    placeholder="Enter IFSC" 
+                                    style="width: 90%; border: none; padding: 5px;"></td>
+                            </tr>
+                        </table>
+                        </td>                           
+                    </tr>
+                    <table>
+                        <tr>
+                            <td style="width: 1%; font-size: medium;">14.</td>
+                            <td style="width: 39%; font-size: medium;">Full Adress of the Claimant</td>
+                            <td><input type="text" name="Name" id="Name"  
+                                placeholder="Enter Full Postal Address with Pin Code" 
+                                style="width: 90%; border: none; padding: 5px;"></td>
+                        </tr>
+                    </table>
+                  <div style="height: fit-content;">
+                    <p style="margin: 0%; font-size:small;">* यह प्रमाणित किया जाता है की उपर्युक्त विवरण मेरी जानकारी के अनुसार सही है|</p>
+                    <p style="margin: 0%;font-size:small;">* Certified that the particulars are to the best of my knowledge</p>
+                   </td><br>
+                       
+                  <div class="container" style="display: flex; justify-content: space-between;">
+    <div class="left"  margin-left: 10%;> <p style="margin: 0%;font-size:small;">दावाकर्ता का हस्ताक्षर </p>
+        <p style="margin: 0%;font-size:small;">Claimant Signatue </p> <br>
+    <p style="margin: 0%;font-size:small;">Name/नाम</p></div>
+    <!-- <div class="center"  margin: 0 auto;">This is the second sentence.</div> -->
+    <div class="right" style="text-align: right; margin-right: 10%;"><p style="margin: 0%;font-size:small;">नियोक्ता का हस्ताक्षर </p>
+        <p style="margin: 0%;font-size:small;">Employers Signature</p>
+    <p style="margin: 0%;font-size:small;">नियोक्ता का पद नाम तथा मुहर </p>
+<p style="margin: 0%;font-size:small;">Designation of Employer and stamp</p></div>
+</div> 
+
+<div class="container" style="display: flex; justify-content: space-between;">
+    <div class="left"  margin-left: 0%;> <p style="margin: 0%; font-size:small;">संलग्नक / Enclosure. (i). मृत्यु प्रमाण पत्र </p>
+        <p style="margin: 0%; margin-left: 130px;font-size:small;">(ii)सभी दावाकर्ता का संयुक्तफोटो/ Joint photograph of all claimants </p>
+        <p style="margin: 0%;margin-left: 130px;font-size:small;">(iii)दावा करने वाले बच्चों का जन्म प्रमाण पत्र / Date of Birth certificate of children claiming pension</p>
+        <p style="margin: 0%;margin-left: 130px;font-size:small;">(iv)योजना प्रमाण पत्र (यदि लागु हो)/ Scheme Certificate (If applicable)</p>
+        <p style="margin: 0%;margin-left: 130px;font-size:small;">(v)बैंक खाते के सत्यापन के लिए एक रद्द चेक / पासबुक के पहले पृष्ट का अभिमानित प्रतिलिपि <br> 
+            For verification of Bank account, a copy of cancelled cheque or attested copy of 1st page of Bank Passbook </p>
+     </div>
+    <!-- <div class="center"  margin: 0 auto;">This is the second sentence.</div> -->
+    
+</div>              
+        </tbody>
+    </table>
+</div>
+ <!-- Button to trigger PDF generation -->
+ <input type="button" value="Print PDF" onclick="generatePDF()">
+</form>
+
+<!-- JavaScript function to generate PDF and trigger print -->
+<script>
+  function generatePDF() {
+    // Select the form element
+    var element = document.getElementById('myForm');
+    
+    // Generate the PDF
+    html2pdf()
+      .from(element) // Convert the form to PDF
+      .save()        // Save the PDF file (download it)
+      .then(function() {
+        // Trigger the print dialog
+        window.print();
+      });
+  }
+</script>
+</body>
+</html>
